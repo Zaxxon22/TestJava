@@ -7,7 +7,7 @@ public class Figures { //resortir paire, 2paires, brelan etc.
 
 	private String nomFigure;
 	private int valeurFigure;
-	private List<Carte> paquetDe5; //main de 5 cartes à déterminer
+	private Paquet paquetDe5; //main de 5 cartes à déterminer
 	private final int RIEN=0,
 			PAIRE=1,
 			DEUXPAIRES=2,
@@ -22,13 +22,13 @@ public class Figures { //resortir paire, 2paires, brelan etc.
 		
 		this.nomFigure="Inconnu";
 		this.valeurFigure=-1;
-		this.paquetDe5 = new LinkedList<Carte>();
+		this.paquetDe5 = new Paquet();
 	
 	}
 	
 	
 
-	public Figures(List<Carte> paquetDe5) {
+	public Figures(Paquet paquetDe5) {
 		this.paquetDe5 = paquetDe5;
 		this.setValeurFigure(paquetDe5);
 		this.setNomFigure(valeurFigure);
@@ -46,7 +46,7 @@ public class Figures { //resortir paire, 2paires, brelan etc.
 
 	// A FAIRE
 	
-	private void setValeurFigure(List<Carte> paquetDe5){
+	private void setValeurFigure(Paquet paquetDe5){
 		int resultat = RIEN;
 		int[][] tabPaquet5 = triPaquet5(paquetDe5,true);
 		
@@ -57,7 +57,7 @@ public class Figures { //resortir paire, 2paires, brelan etc.
 	
 	// A FAIRE
 	
-	private int[][] triPaquet5(List<Carte> paquetDe5,boolean asFort){
+	private int[][] triPaquet5(Paquet paquetDe5,boolean asFort){
 		int[][] t = new int[5][2];
 		
 		//recherche et changement de la force d'un AS
@@ -108,7 +108,7 @@ public class Figures { //resortir paire, 2paires, brelan etc.
 		this.nomFigure = nomFigure;
 	}
 
-	public void setPaquetDe5(List<Carte> paquetDe5) {
+	public void setPaquetDe5(Paquet paquetDe5) {
 		this.paquetDe5 = paquetDe5;
 	}
 	

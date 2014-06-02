@@ -6,8 +6,14 @@ public class Principale {
 
 	public static void main(String[] args) {
 
-		Temporaire.tmp();
+		//Temporaire.tmp();
+		Paquet paquet = new Paquet();
+		Paquet mainjoueur = new Paquet();
 		
+		paquet.init52();
+		
+		Affichage.affichePaquet(paquet);
+		Affichage.affichePaquet(mainjoueur);
 	}
 
 }
